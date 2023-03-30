@@ -1,5 +1,4 @@
 import knex from "../database/knex/index.js"
-import AppError from "../utils/AppError.js"
 
 export class MovieNotesController {
   async index(req, res) {
@@ -69,12 +68,12 @@ export class MovieNotesController {
   async show(req, res) {
     const { id } = req.params
 
-    const movie_note = await knex("movie_notes").where({ id }).first()
-    const movie_tags = await knex("movie_tags").where({ note_id : id }).orderBy("name")
+    const movieNote = await knex("movie_notes").where({ id }).first()
+    const movieTags = await knex("movie_tags").where({ note_id : id }).orderBy("name")
 
     return res.json({
-      ...movie_note,
-      movie_tags
+      ...movieNote,
+      movieTags
     })
   }
 

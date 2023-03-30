@@ -1,0 +1,21 @@
+export default {
+  COLORS: {
+    BACKGROUND_PRIMARY: "#1C1B1E",
+    BACKGROUND_SECONDARY: "#0D0C0F",
+    BACKGROUND_INPUT: "#262529",
+    BACKGROUND_NOTES: "hsla(349, 100%, 76%, 0.05)",
+    
+    PINK: "#FF859B",
+
+    GRAY_BUTTON: "#312E38",
+    GRAY_BORDER: "#3E3B47",
+    GRAY_300: "#999591",
+    GRAY_200: "#948F99",
+    GRAY_100: "#CAC4CF",
+
+
+    WHITE: "#FFFFFF",
+    WHITE_900: "#F4EDE8",
+    WHITE_800:"#E5E5E5",
+  }
+}

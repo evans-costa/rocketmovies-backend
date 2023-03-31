@@ -7,7 +7,7 @@ export const Container = styled.button`
   align-items: center;
   justify-content: center;
 
-  width: 100%;
+  width: 20rem;
   height: 4.8rem;
   padding: 1.6rem;
 
@@ -19,5 +19,6 @@ export const Container = styled.button`
   
   > svg {
     margin-right: 8px;
+    color: ${({ theme }) => theme.COLORS.GRAY_BUTTON};
   }
 `

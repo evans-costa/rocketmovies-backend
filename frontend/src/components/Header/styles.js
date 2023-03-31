@@ -10,6 +10,7 @@ export const Container = styled.header`
   gap: 6.4rem;
 
   padding: 2.4rem 12.3rem;
+  margin-bottom: 4rem;
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.GRAY_BORDER};
   font-family: 'Roboto Slab', serif;
 

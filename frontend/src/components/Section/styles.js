@@ -1,12 +1,22 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  > h3 {
-    font-size: 3.2rem;
-    font-weight: 400;
-    line-height: 4.2rem;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+
+  h2 {
+    font-size: 3.6rem;
+    font-weight: 500;
+    line-height: 4.7rem;
     align-self: flex-start;
 
-    color: ${({ theme }) => theme.COLORS.WHITE}
+    margin-top: 2.4rem;
+
+    color: ${({ theme }) => theme.COLORS.WHITE_900};
   }
 `

@@ -15,16 +15,12 @@ export const Container = styled.div`
   }
 `
 export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.4rem;
-
   max-width: 114rem;
-  margin: 0 auto;
-  
 
-  .title {
+  margin: 0 auto;
+  padding-bottom: 5.2rem;
+  
+  header {
     width: 100%;
 
     display: flex;
@@ -40,5 +36,18 @@ export const Content = styled.div`
 
       color: ${({ theme }) => theme.COLORS.WHITE}
     }
+
+    > button {
+      width: 20.7rem;
+    }
+  }
+
+  .notes {
+    max-height: 60rem;
+    overflow-y: auto;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;      
   }
 `

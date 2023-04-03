@@ -29,17 +29,22 @@ export const Container = styled.div`
   > p {
     font-family: 'Roboto', sans-serif;
 
+    overflow: hidden;
+    text-overflow: ellipsis;  
+    white-space: pre-wrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.9rem;
-
+    
     color: ${({ theme }) => theme.COLORS.GRAY_300};
   }
 
   footer {
     display: flex;
     gap: 8px;
-
-    margin-top: 1.5rem;
   }
 `

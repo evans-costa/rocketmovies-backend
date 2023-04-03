@@ -1,12 +1,14 @@
 import { HiArrowLeft } from 'react-icons/hi'
 
-import { Container, Content } from "./styles"
+import { Container, Content, Bookmarks, ButtonWrapper } from "./styles"
 
 import { Header } from "../../components/Header"
 import { ButtonText } from "../../components/ButtonText"
 import { Section } from "../../components/Section"
 import { Input } from "../../components/Input"
 import { TextArea } from "../../components/TextArea"
+import { NewTag } from '../../components/NewTag'
+import { Button } from '../../components/Button'
 
 export function NewMovie() {
   return ( 
@@ -17,7 +19,11 @@ export function NewMovie() {
           icon={HiArrowLeft}
           title="Voltar"
         />
-        <Section title="Novo filme">
+
+        <Section 
+          className="new-movie"
+          title="Novo filme"
+        >
           <div className='input-wrapper'>
             <Input 
               type="text"
@@ -31,12 +37,23 @@ export function NewMovie() {
           <TextArea 
             placeholder="Observações"  
           />
-          <h3>Marcadores</h3>
-          <div>
-            
-          </div>
+          <Bookmarks>
+            <h3>Marcadores</h3>
+            <div className='tags'>
+              <NewTag value="React" />
+              <NewTag 
+                isNew
+                placeholder="Novo marcador" 
+              />
+            </div>
+          </Bookmarks>
 
+          <ButtonWrapper >
+            <Button title='Excluir Filme' />
+            <Button title='Salvar Alterações' />
+          </ButtonWrapper>
         </Section>
+
       </Content>
     </Container>
   ) 

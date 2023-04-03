@@ -10,6 +10,7 @@ export default createGlobalStyle`
     padding: 0;
 
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
   }
 
   body {
@@ -18,6 +19,8 @@ export default createGlobalStyle`
     
     font-size: 1.6rem;
     font-family: 'Roboto Slab', serif;
+
+    height: 100vh;
   }
 
   a {

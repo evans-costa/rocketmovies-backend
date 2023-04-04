@@ -11,10 +11,10 @@ export const Container = styled.button`
   height: 4.8rem;
   padding: 1.6rem;
 
-  background-color: ${({ theme }) => theme.COLORS.PINK};
+  background-color: ${({ theme, isDelete }) => isDelete ? theme.COLORS.BACKGROUND_SECONDARY : theme.COLORS.PINK};
   border-radius: 8px;
 
-  color: ${({ theme }) => theme.COLORS.GRAY_BUTTON};
+  color: ${({ theme, isDelete }) => isDelete ? theme.COLORS.PINK: theme.COLORS.GRAY_BUTTON};
   font-size: 1.6rem;
   
   > svg {

@@ -49,7 +49,10 @@ export function NewMovie() {
           </Bookmarks>
 
           <ButtonWrapper >
-            <Button title='Excluir Filme' />
+            <Button 
+              isDelete
+              title='Excluir Filme' 
+            />
             <Button title='Salvar Alterações' />
           </ButtonWrapper>
         </Section>

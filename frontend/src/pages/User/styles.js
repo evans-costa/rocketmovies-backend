@@ -12,11 +12,6 @@ export const Container = styled.div`
     padding-left: 14.4rem;
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_NOTES};
   }
-
-  svg {
-    margin: 0 1.2rem;
-    color: ${({ theme }) => theme.COLORS.GRAY_200}
-  }
 `
 export const Profile = styled.div`
   position: relative;

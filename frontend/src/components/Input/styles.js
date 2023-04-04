@@ -5,9 +5,17 @@ export const Container = styled.div`
 
   display: flex;
   align-items: center;
-
+  
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_INPUT};
   border-radius: 1rem;
+
+  padding: 0 1.2rem;
+  margin-bottom: 8px;
+
+  svg {
+    margin-right: 1.2rem;
+    color: ${({ theme }) => theme.COLORS.GRAY_200};
+  }
 
   > input {
     width: 100%;
@@ -20,7 +28,6 @@ export const Container = styled.div`
     font-family: 'Roboto Slab', serif;
     font-size: 1.6rem;
     color: ${({ theme }) => theme.COLORS.WHITE_900}; 
-
 
     &::placeholder {
       color: ${({ theme }) => theme.COLORS.GRAY_200};

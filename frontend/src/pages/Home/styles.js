@@ -20,7 +20,7 @@ export const Content = styled.div`
   margin: 0 auto;
   padding-bottom: 5.2rem;
   
-  header {
+  > div {
     width: 100%;
 
     display: flex;

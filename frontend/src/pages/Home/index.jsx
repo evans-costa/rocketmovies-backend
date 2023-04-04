@@ -13,13 +13,13 @@ export function Home () {
         <main>
           <Content>
             
-            <header>
+            <div>
               <h2>Meus filmes</h2>
               <Button 
                 icon={HiPlus}
                 title="Adicionar filme"
               /> 
-            </header>
+            </div>
 
             <Section>
               <div className="notes">

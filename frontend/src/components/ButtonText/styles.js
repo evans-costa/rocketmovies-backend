@@ -13,7 +13,7 @@ export const Container = styled.button`
   line-height: 2.1rem;
   text-align: center;
 
-  svg {
+  > svg {
     color: ${({ theme }) => theme.COLORS.PINK};
     margin-right: 1rem;
   }

@@ -12,18 +12,19 @@ export const Container = styled.div`
   > input {
     width: 100%;
     height: 5.6rem;
-
-    padding: 0 2.4rem;
-
+    
     background: transparent;
     border: none;
     outline: none;
 
     font-family: 'Roboto Slab', serif;
+    font-size: 1.6rem;
     color: ${({ theme }) => theme.COLORS.WHITE_900}; 
+
 
     &::placeholder {
       color: ${({ theme }) => theme.COLORS.GRAY_200};
+      font-size: 1.4rem;
     }
   }
 `

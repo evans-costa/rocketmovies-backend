@@ -21,7 +21,7 @@ export const Container = styled.header`
 
     color: ${({ theme }) => theme.COLORS.PINK};
   }
-`
+`;
 
 export const Profile = styled.div`
   display: flex;
@@ -48,11 +48,11 @@ export const Profile = styled.div`
     }
   }
 
-  > img {
+  > a:last-child img{
     border: 1px solid ${({ theme }) => theme.COLORS.GRAY_BORDER};
     border-radius: 50%;
 
     width: 6.4rem;
     height: 6.4rem;
   }
-`
+`;

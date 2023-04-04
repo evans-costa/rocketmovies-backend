@@ -13,7 +13,7 @@ export const Container = styled.div`
   > main {
     grid-area: content;
   }
-`
+`;
 export const Content = styled.div`
   max-width: 114rem;
 
@@ -37,7 +37,7 @@ export const Content = styled.div`
       color: ${({ theme }) => theme.COLORS.WHITE}
     }
 
-    > button {
+    > a {
       width: 20.7rem;
     }
   }
@@ -50,4 +50,4 @@ export const Content = styled.div`
     flex-direction: column;
     gap: 2.4rem;      
   }
-`
+`;

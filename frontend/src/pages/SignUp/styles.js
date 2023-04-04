@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import backgroundImg from "../../assets/home.png"
+import backgroundImg from "../../assets/home.png";
 
 export const Container = styled.div`
   height: 100vh;
 
   display: flex;
   align-items: stretch;
-`
+`;
 
 export const Register = styled.form`
   display: flex;
@@ -48,11 +48,11 @@ export const Register = styled.form`
     margin-top: 1.6rem;
   }
 
-  button:last-child {
+  a {
     align-self: center;
     margin-top: 4.2rem;
   }
-`
+`;
 
 export const Image = styled.div`
   flex: 1;
@@ -61,4 +61,4 @@ export const Image = styled.div`
   background-image: url(${backgroundImg});
   background-repeat: no-repeat;
   background-size: cover;
-`
+`;

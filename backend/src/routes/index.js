@@ -9,4 +9,4 @@ export const router = Router();
 router.use("/users", usersRouter);
 router.use("/movie_notes", movieNotesRouter);
 router.use("/movie_tags", movieTagsRouter);
-router.use("/sessions", sessionsRouter);
+router.use("/session", sessionsRouter);

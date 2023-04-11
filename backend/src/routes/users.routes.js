@@ -6,4 +6,4 @@ const usersController = new UsersController();
 export const usersRouter = Router();
 
 usersRouter.post("/", usersController.create);
-usersRouter.put("/:id", ensureAuthenticated, usersController.update);
+usersRouter.put("/", ensureAuthenticated, usersController.update);

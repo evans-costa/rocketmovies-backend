@@ -6,7 +6,7 @@ export const movieTagsRouter = Router();
 const movieTagsController = new MovieTagsController();
 
 movieTagsRouter.get(
-  "/:user_id",
+  "/",
   ensureAuthenticated,
   movieTagsController.index
 );

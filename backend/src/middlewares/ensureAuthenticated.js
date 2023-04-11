@@ -1,4 +1,4 @@
-import { AppError } from "../utils/AppError.js";
+import AppError from "../utils/AppError.js";
 import authConfig from "../configs/auth.js";
 import jsonwebtoken from "jsonwebtoken";
 const { verify } = jsonwebtoken;

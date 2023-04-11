@@ -24,7 +24,6 @@ export function User() {
 					<img src="https://github.com/evans-costa.png" alt="Foto de perfil" />
 					<label htmlFor="avatar">
 						<HiOutlineCamera />
-
 						<input type="file" id="avatar" />
 					</label>
 				</Profile>

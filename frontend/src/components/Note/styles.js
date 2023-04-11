@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%
+  width: 100%;
   max-height: 22rem;
 
   display: flex;
@@ -35,9 +35,7 @@ export const Container = styled.div`
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-
-    font-weight: 400;
-    font-size: 1.6rem;
+    
     line-height: 1.9rem;
     
     color: ${({ theme }) => theme.COLORS.GRAY_300};
@@ -47,4 +45,4 @@ export const Container = styled.div`
     display: flex;
     gap: 8px;
   }
-`
+`;

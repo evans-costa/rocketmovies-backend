@@ -5,8 +5,10 @@ export const Container = styled.div`
   align-items: center;
 
   border-radius: 1rem;
-  border: ${({ isNew, theme }) => isNew ? `2px dashed ${theme.COLORS.GRAY_200}` : 'none'};
-  background-color: ${({ isNew, theme }) => isNew ? 'transparent' : theme.COLORS.BACKGROUND_INPUT};
+  border: ${({ isNew, theme }) =>
+		isNew ? `2px dashed ${theme.COLORS.GRAY_200}` : "none"};
+  background-color: ${({ isNew, theme }) =>
+		isNew ? "transparent" : theme.COLORS.BACKGROUND_INPUT};
   
   input {
     height: 5.6rem;
@@ -28,7 +30,6 @@ export const Container = styled.div`
   }
 
   button {
-    border: none;
     background: transparent;
     color: ${({ theme }) => theme.COLORS.PINK};
 
@@ -40,4 +41,4 @@ export const Container = styled.div`
       height: 2.2rem;
     }
   }
-`
+`;

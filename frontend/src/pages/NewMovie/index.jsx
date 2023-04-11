@@ -26,7 +26,7 @@ export function NewMovie() {
 					<Bookmarks>
 						<h3>Marcadores</h3>
 						<div className='tags'>
-							<NewTag value="React" />
+							<NewTag value="Ficção Científica" />
 							<NewTag isNew placeholder="Novo marcador" />
 						</div>
 					</Bookmarks>

@@ -9,7 +9,6 @@ export const Container = styled.span`
   color: ${({ theme }) => theme.COLORS.WHITE_800};
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
-  font-weight: 400;
   line-height: 1.4rem;
   text-align: center;
-`
+`;

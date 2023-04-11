@@ -12,7 +12,6 @@ export const Container = styled.header`
   padding: 2.4rem 12.3rem;
   margin-bottom: 4rem;
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.GRAY_BORDER};
-  font-family: 'Roboto Slab', serif;
 
   > h1 {
     font-size: 2.4rem;
@@ -44,7 +43,6 @@ export const Profile = styled.div`
     a {
       text-align: end;
       color: ${({ theme }) => theme.COLORS.GRAY_200};
-      font-weight: 400;
     }
   }
 

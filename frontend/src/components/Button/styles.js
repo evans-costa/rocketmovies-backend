@@ -2,8 +2,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Container = styled(Link)`
-  grid-area: button;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +16,6 @@ export const Container = styled(Link)`
 
   color: ${({ theme, isDelete }) =>
 		isDelete ? theme.COLORS.PINK : theme.COLORS.GRAY_BUTTON};
-  font-size: 1.6rem;
   
   > svg {
     margin-right: 8px;

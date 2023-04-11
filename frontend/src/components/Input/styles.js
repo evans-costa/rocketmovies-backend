@@ -26,7 +26,6 @@ export const Container = styled.div`
     outline: none;
 
     font-family: 'Roboto Slab', serif;
-    font-size: 1.6rem;
     color: ${({ theme }) => theme.COLORS.WHITE_900}; 
 
     &::placeholder {
@@ -34,4 +33,4 @@ export const Container = styled.div`
       font-size: 1.4rem;
     }
   }
-`
+`;

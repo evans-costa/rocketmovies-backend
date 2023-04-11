@@ -8,6 +8,6 @@ const movieNotesController = new MovieNotesController();
 movieNotesRouter.use(ensureAuthenticated);
 
 movieNotesRouter.get("/", movieNotesController.index);
-movieNotesRouter.post("/:user_id", movieNotesController.create);
+movieNotesRouter.post("/", movieNotesController.create);
 movieNotesRouter.get("/:id", movieNotesController.show);
 movieNotesRouter.delete("/:id", movieNotesController.delete);

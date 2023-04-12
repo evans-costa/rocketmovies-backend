@@ -23,7 +23,7 @@ export function SignUp() {
 
     api
       .post("/users", { name, email, password })
-      .then(alert("User successfully registered!"), navigate("/"))
+      .then(alert("User successfully registered!"), navigate("/signin"))
       .catch((error) => {
         if (error.response) {
           alert(error.response.data.message);
@@ -64,7 +64,7 @@ export function SignUp() {
           onClick={handleSignUp}
         />
         <ButtonText
-          to='/signin'
+          to='/'
           icon={HiArrowLeft}
           title='Voltar para o login'
         />

@@ -40,13 +40,15 @@ export const Profile = styled.div`
       font-weight: 700;
     }
 
-    a {
+    button {
+      border: none;
+      background: none;
       text-align: end;
       color: ${({ theme }) => theme.COLORS.GRAY_200};
     }
   }
 
-  > a:last-child img{
+  > a:last-child img {
     border: 1px solid ${({ theme }) => theme.COLORS.GRAY_BORDER};
     border-radius: 50%;
 

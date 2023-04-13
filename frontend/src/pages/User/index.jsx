@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   HiArrowLeft,
   HiOutlineCamera,
@@ -5,16 +6,15 @@ import {
   HiOutlineMail,
   HiOutlineLockClosed,
 } from "react-icons/hi";
+import { useAuth } from "../../hooks/auth";
+import { api } from "../../services/api";
 
-import { Container, Form, Profile } from "./styles";
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
+import { Container, Form, Profile } from "./styles";
 
 import { ButtonText } from "../../components/ButtonText";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
-import { useState } from "react";
-import { useAuth } from "../../hooks/auth";
-import { api } from "../../services/api";
 
 export function User() {
   const { user, updateProfile } = useAuth();

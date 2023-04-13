@@ -53,9 +53,9 @@ export class UsersController {
       if (!checkOldPassword) {
         throw new AppError("The old password is not correct!");
       }
-    }
 
-    user.password = await hash(password, 8);
+      user.password = await hash(password, 8);
+    }
 
     await knex("users").where({ id: user_id }).update({
       name: user.name,

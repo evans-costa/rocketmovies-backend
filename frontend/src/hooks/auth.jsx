@@ -32,6 +32,25 @@ export function AuthProvider({ children }) {
     setData({});
   }
 
+  async function updateProfile({ user }) {
+    try {
+      await api.put("/users", user);
+      user.password = "";
+      user.oldPassword = "";
+
+      localStorage.setItem("@rocketmovies:user", JSON.stringify(user));
+
+      setData({ user, token: data.token });
+      alert("You profile was update sucessfully!");
+    } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message);
+      } else {
+        alert("It was not possible update your profile...");
+      }
+    }
+  }
+
   useEffect(() => {
     const user = localStorage.getItem("@rocketmovies:user");
     const token = localStorage.getItem("@rocketmovies:token");
@@ -47,7 +66,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ signIn, signOut, user: data.user }}>
+    <AuthContext.Provider value={{ signIn, signOut, updateProfile, user: data.user }}>
       {children}
     </AuthContext.Provider>
   );

@@ -10,7 +10,7 @@ export const Container = styled.div`
 
   padding: 3.2rem;
   gap: 1.5rem;
-  
+
   background: ${({ theme }) => theme.COLORS.BACKGROUND_NOTES};
   border-radius: 1.6rem;
 
@@ -22,22 +22,23 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.WHITE};
   }
 
-  > svg {
+  > span {
+    display: flex;
     color: ${({ theme }) => theme.COLORS.PINK};
   }
 
   > p {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 
     overflow: hidden;
-    text-overflow: ellipsis;  
+    text-overflow: ellipsis;
     white-space: pre-wrap;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    
+
     line-height: 1.9rem;
-    
+
     color: ${({ theme }) => theme.COLORS.GRAY_300};
   }
 

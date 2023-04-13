@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
 
+import { api } from "../../services/api";
+
 import { Container, Profile } from "./styles";
 import { Input } from "../Input";
 
 export function Header() {
-  const { signOut } = useAuth();
+  const { signOut, user } = useAuth();
+
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatarPlaceholder;
 
   function handleSignOut() {
     signOut();
@@ -20,13 +26,13 @@ export function Header() {
       />
       <Profile>
         <div>
-          <strong>Evandro Costa</strong>
+          <strong>{user.name}</strong>
           <button onClick={handleSignOut}>sair</button>
         </div>
         <Link to='/profile'>
           <img
-            src='https://github.com/evans-costa.png'
-            alt='Foto de perfil'
+            src={avatarUrl}
+            alt={`${user.name} profile picture`}
           />
         </Link>
       </Profile>

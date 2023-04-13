@@ -7,12 +7,14 @@ import {
 } from "react-icons/hi";
 
 import { Container, Form, Profile } from "./styles";
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 
 import { ButtonText } from "../../components/ButtonText";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { useState } from "react";
 import { useAuth } from "../../hooks/auth";
+import { api } from "../../services/api";
 
 export function User() {
   const { user, updateProfile } = useAuth();
@@ -22,6 +24,12 @@ export function User() {
   const [newPassword, setNewPassword] = useState();
   const [oldPassword, setOldPasword] = useState();
 
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatarPlaceholder;
+  const [avatar, setAvatar] = useState(avatarUrl);
+  const [avatarFile, setAvatarFile] = useState(null);
+
   async function handleUpdateProfile() {
     const user = {
       name,
@@ -30,7 +38,15 @@ export function User() {
       oldPassword,
     };
 
-    await updateProfile({ user });
+    await updateProfile({ user, avatarFile });
+  }
+
+  function handleChangeAvatar(e) {
+    const file = e.target.files[0];
+    setAvatarFile(file);
+
+    const imagePreview = URL.createObjectURL(file);
+    setAvatar(imagePreview);
   }
 
   return (
@@ -46,7 +62,7 @@ export function User() {
       <Form>
         <Profile>
           <img
-            src='https://github.com/evans-costa.png'
+            src={avatar}
             alt='Foto de perfil'
           />
           <label htmlFor='avatar'>
@@ -54,6 +70,7 @@ export function User() {
             <input
               type='file'
               id='avatar'
+              onChange={handleChangeAvatar}
             />
           </label>
         </Profile>

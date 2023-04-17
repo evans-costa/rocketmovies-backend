@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   HiArrowLeft,
   HiOutlineCamera,
@@ -27,18 +28,27 @@ export function User() {
   const avatarUrl = user.avatar
     ? `${api.defaults.baseURL}/files/${user.avatar}`
     : avatarPlaceholder;
+
   const [avatar, setAvatar] = useState(avatarUrl);
   const [avatarFile, setAvatarFile] = useState(null);
 
+  const navigate = useNavigate();
+
+  function handleBack() {
+    navigate(-1);
+  }
+
   async function handleUpdateProfile() {
-    const user = {
+    const updated = {
       name,
       email,
       password: newPassword,
       oldPassword,
     };
 
-    await updateProfile({ user, avatarFile });
+    const userUpdated = Object.assign(user, updated);
+
+    await updateProfile({ user: userUpdated, avatarFile });
   }
 
   function handleChangeAvatar(e) {
@@ -52,26 +62,15 @@ export function User() {
   return (
     <Container>
       <header>
-        <ButtonText
-          to='/'
-          icon={HiArrowLeft}
-          title='Voltar'
-        />
+        <ButtonText icon={HiArrowLeft} title='Voltar' onClick={handleBack} />
       </header>
 
       <Form>
         <Profile>
-          <img
-            src={avatar}
-            alt='Foto de perfil'
-          />
+          <img src={avatar} alt={`{Foto de perfil de ${user.name}`} />
           <label htmlFor='avatar'>
             <HiOutlineCamera />
-            <input
-              type='file'
-              id='avatar'
-              onChange={handleChangeAvatar}
-            />
+            <input type='file' id='avatar' onChange={handleChangeAvatar} />
           </label>
         </Profile>
 
@@ -102,10 +101,7 @@ export function User() {
           onChange={(e) => setNewPassword(e.target.value)}
         />
 
-        <Button
-          title='Salvar'
-          onClick={handleUpdateProfile}
-        />
+        <Button title='Salvar' onClick={handleUpdateProfile} />
       </Form>
     </Container>
   );

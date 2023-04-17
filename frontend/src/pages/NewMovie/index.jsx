@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 
 export function NewMovie() {
   const [title, setTitle] = useState("");
-  const [rating, setRating] = useState("");
+  const [rating, setRating] = useState(parseInt(""));
   const [description, setDescription] = useState("");
   const [tags, setTags] = useState([]);
   const [newTag, setNewTag] = useState("");
@@ -33,7 +33,11 @@ export function NewMovie() {
 
   async function handleNewNote() {
     if (newTag) {
-      return alert("Adicione a tag que está preenchida ou deixe o campo vazio");
+      return alert("Adicione a tag que está preenchida ou deixe o campo vazio.");
+    }
+
+    if (rating > 5 || rating < 0 || isNaN(rating)) {
+      return alert("Adicione notas apenas de 0 a 5!");
     }
 
     if (!title || !description || !rating) {

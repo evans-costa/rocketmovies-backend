@@ -2,15 +2,15 @@ import { Container } from "./styles";
 import { Tag } from "../Tag";
 import { Star } from "../Star";
 
-export function Note({ title, note, tags }) {
+export function Note({ title, rating, description, tags }) {
   return (
     <Container>
       <h3>{title}</h3>
       <Star
-        rating={5}
-        size={16}
+        rating={rating}
+        size={18}
       />
-      <p>{note}</p>
+      <p>{description}</p>
       {tags && (
         <footer>
           {tags.map((tag) => (

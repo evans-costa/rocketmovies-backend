@@ -70,6 +70,7 @@ export const NewNote = styled(Link)`
 
   > svg {
     margin-right: 8px;
+    margin-top: 2px;
     color: ${({ theme }) => theme.COLORS.GRAY_BUTTON};
   }
 `;

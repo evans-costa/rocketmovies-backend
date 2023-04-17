@@ -2,31 +2,16 @@ import { Container } from "./styles";
 import { HiStar, HiOutlineStar } from "react-icons/hi";
 
 export function Star({ rating, size }) {
-  const stars = [];
-
-  for (let i = 0; i < 5; i++) {
-    if (i < rating) {
-      stars.push(
-        <HiStar
-          key={i}
-          size={size}
-        />
-      );
+  const stars = new Array(5).fill().map((star, index) => {
+    if (index < rating) {
+      return (star = <HiStar key={index} size={size} />);
     } else {
-      stars.push(
-        <HiOutlineStar
-          key={i}
-          size={size}
-        />
-      );
+      return (star = <HiOutlineStar key={index} size={size} />);
     }
-  }
+  });
 
   return (
-    <Container
-      rating={rating}
-      size={size}
-    >
+    <Container rating={rating} size={size}>
       {stars}
     </Container>
   );

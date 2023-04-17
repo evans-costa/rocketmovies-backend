@@ -15,5 +15,6 @@ export const Container = styled(Link)`
   > svg {
     color: ${({ theme }) => theme.COLORS.PINK};
     margin-right: 1rem;
+    margin-top: 2px;
   }
 `;

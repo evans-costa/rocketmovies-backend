@@ -74,7 +74,7 @@ export class MovieNotesController {
 
     return res.json({
       ...movieNote,
-      movieTags,
+      tags: movieTags,
     });
   }
 

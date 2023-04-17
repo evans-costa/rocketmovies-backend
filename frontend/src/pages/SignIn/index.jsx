@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { HiOutlineMail, HiOutlineLockClosed } from "react-icons/hi";
 
 import { useAuth } from "../../hooks/auth";
@@ -40,14 +39,8 @@ export function SignIn() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <Button
-          title='Entrar'
-          onClick={handleSignIn}
-        />
-        <ButtonText
-          to='/register'
-          title='Criar conta'
-        />
+        <Button title='Entrar' onClick={handleSignIn} />
+        <ButtonText to='/register' title='Criar conta' />
       </Login>
 
       <Image />

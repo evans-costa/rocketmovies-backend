@@ -1,20 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
 
 import { api } from "../../services/api";
 
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
+
 import { Container, Profile } from "./styles";
+
 import { Input } from "../Input";
 
 export function Header({ search, setSearch }) {
   const { signOut, user } = useAuth();
+  const navigate = useNavigate();
 
   const avatarUrl = user.avatar
     ? `${api.defaults.baseURL}/files/${user.avatar}`
     : avatarPlaceholder;
 
   function handleSignOut() {
+    navigate("/");
     signOut();
   }
 
@@ -33,10 +37,7 @@ export function Header({ search, setSearch }) {
           <button onClick={handleSignOut}>sair</button>
         </div>
         <Link to='/profile'>
-          <img
-            src={avatarUrl}
-            alt={`${user.name} profile picture`}
-          />
+          <img src={avatarUrl} alt={`${user.name} profile picture`} />
         </Link>
       </Profile>
     </Container>

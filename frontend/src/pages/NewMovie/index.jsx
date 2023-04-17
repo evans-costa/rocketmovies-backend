@@ -1,4 +1,8 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { HiArrowLeft } from "react-icons/hi";
+
+import { api } from "../../services/api";
 
 import { Container, Content, Bookmarks, ButtonWrapper } from "./styles";
 
@@ -9,9 +13,6 @@ import { Input } from "../../components/Input";
 import { TextArea } from "../../components/TextArea";
 import { NewTag } from "../../components/NewTag";
 import { Button } from "../../components/Button";
-import { useState } from "react";
-import { api } from "../../services/api";
-import { useNavigate } from "react-router-dom";
 
 export function NewMovie() {
   const [title, setTitle] = useState("");
@@ -21,6 +22,10 @@ export function NewMovie() {
   const [newTag, setNewTag] = useState("");
 
   const navigate = useNavigate();
+
+  function handleBack() {
+    navigate(-1);
+  }
 
   function handleAddTag() {
     setTags((prevTags) => [...prevTags, newTag]);
@@ -65,32 +70,18 @@ export function NewMovie() {
     <Container>
       <Header />
       <Content>
-        <ButtonText
-          to='/'
-          icon={HiArrowLeft}
-          title='Voltar'
-        />
+        <ButtonText icon={HiArrowLeft} title='Voltar' onClick={handleBack} />
 
-        <Section
-          className='new-movie'
-          title='Novo filme'
-        >
+        <Section className='new-movie' title='Novo filme'>
           <div className='input-wrapper'>
-            <Input
-              type='text'
-              placeholder='Título'
-              onChange={(e) => setTitle(e.target.value)}
-            />
+            <Input type='text' placeholder='Título' onChange={(e) => setTitle(e.target.value)} />
             <Input
               type='text'
               placeholder='Sua nota (de 0 a 5)'
               onChange={(e) => setRating(e.target.value)}
             />
           </div>
-          <TextArea
-            placeholder='Observações'
-            onChange={(e) => setDescription(e.target.value)}
-          />
+          <TextArea placeholder='Observações' onChange={(e) => setDescription(e.target.value)} />
           <Bookmarks>
             <h3>Marcadores</h3>
             <div className='tags'>
@@ -114,14 +105,8 @@ export function NewMovie() {
           </Bookmarks>
 
           <ButtonWrapper>
-            <Button
-              isRemove
-              title='Cancelar'
-            />
-            <Button
-              title='Salvar filme'
-              onClick={handleNewNote}
-            />
+            <Button isRemove title='Cancelar' />
+            <Button title='Salvar filme' onClick={handleNewNote} />
           </ButtonWrapper>
         </Section>
       </Content>

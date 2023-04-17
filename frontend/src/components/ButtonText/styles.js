@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const Container = styled(Link)`
   background: none;
   border: none;
-  
+
   display: flex;
   align-items: center;
 

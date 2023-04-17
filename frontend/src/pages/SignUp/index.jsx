@@ -16,6 +16,10 @@ export function SignUp() {
 
   const navigate = useNavigate();
 
+  function handleBack() {
+    navigate(-1);
+  }
+
   async function handleSignUp() {
     if (!name || !email || !password) {
       return alert("Fill all the fields!");
@@ -23,7 +27,7 @@ export function SignUp() {
 
     api
       .post("/users", { name, email, password })
-      .then(alert("User successfully registered!"), navigate("/signin"))
+      .then(alert("User successfully registered!"), navigate("/"))
       .catch((error) => {
         if (error.response) {
           alert(error.response.data.message);
@@ -59,15 +63,8 @@ export function SignUp() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <Button
-          title='Cadastrar'
-          onClick={handleSignUp}
-        />
-        <ButtonText
-          to='/'
-          icon={HiArrowLeft}
-          title='Voltar para o login'
-        />
+        <Button title='Cadastrar' onClick={handleSignUp} />
+        <ButtonText icon={HiArrowLeft} title='Voltar para o login' onClick={handleBack} />
       </Register>
       <Image />
     </Container>

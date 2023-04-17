@@ -7,7 +7,7 @@ import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 import { Container, Profile } from "./styles";
 import { Input } from "../Input";
 
-export function Header() {
+export function Header({ search, setSearch }) {
   const { signOut, user } = useAuth();
 
   const avatarUrl = user.avatar
@@ -24,6 +24,8 @@ export function Header() {
       <Input
         placeholder='Pesquisar pelo título'
         type='search'
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
       />
       <Profile>
         <div>

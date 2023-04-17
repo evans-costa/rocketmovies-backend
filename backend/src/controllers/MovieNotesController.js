@@ -70,9 +70,7 @@ export class MovieNotesController {
     const { id } = req.params;
 
     const movieNote = await knex("movie_notes").where({ id }).first();
-    const movieTags = await knex("movie_tags")
-      .where({ note_id: id })
-      .orderBy("name");
+    const movieTags = await knex("movie_tags").where({ note_id: id }).orderBy("name");
 
     return res.json({
       ...movieNote,

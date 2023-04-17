@@ -13,6 +13,7 @@ export const Container = styled.div`
 
   background: ${({ theme }) => theme.COLORS.BACKGROUND_NOTES};
   border-radius: 1.6rem;
+  cursor: pointer;
 
   > h3 {
     font-weight: 700;

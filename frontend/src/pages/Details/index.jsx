@@ -4,6 +4,7 @@ import { HiArrowLeft, HiOutlineClock } from "react-icons/hi";
 
 import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
+import { setFormatedDate } from "../../utils/dateFormat";
 
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 import { Container, Content, Title, Tags, Review, Info } from "./styles";
@@ -33,7 +34,6 @@ export function Details() {
     async function fetchNote() {
       const response = await api.get(`/movie_notes/${params.id}`);
       setData(response.data);
-      console.log(response.data);
     }
 
     fetchNote();
@@ -54,7 +54,7 @@ export function Details() {
               <img src={avatarUrl} alt={`${user.name} profile picture`} />
               <span>By {user.name}</span>
               <HiOutlineClock />
-              <span>{data.updated_at}</span>
+              <span>{setFormatedDate(data.updated_at)}</span>
             </Info>
 
             {data.tags && (

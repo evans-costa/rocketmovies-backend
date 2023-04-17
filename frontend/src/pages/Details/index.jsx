@@ -33,6 +33,7 @@ export function Details() {
     async function fetchNote() {
       const response = await api.get(`/movie_notes/${params.id}`);
       setData(response.data);
+      console.log(response.data);
     }
 
     fetchNote();
@@ -43,15 +44,15 @@ export function Details() {
       <Header />
       {data && (
         <Content>
-          <ButtonText icon={HiArrowLeft} title='Voltar' onClick={handleBack} />
+          <ButtonText icon={HiArrowLeft} title='Go Back' onClick={handleBack} />
           <Section className='movie-details'>
             <Title>
               <h2>{data.title}</h2>
               <Star rating={data.rating} size={24} />
             </Title>
             <Info>
-              <img src={avatarUrl} alt={`Foto de perfil de ${user.name}`} />
-              <span>Por {user.name}</span>
+              <img src={avatarUrl} alt={`${user.name} profile picture`} />
+              <span>By {user.name}</span>
               <HiOutlineClock />
               <span>{data.updated_at}</span>
             </Info>

@@ -22,7 +22,7 @@ export function SignUp() {
 
   async function handleSignUp() {
     if (!name || !email || !password) {
-      return alert("Fill all the fields!");
+      return alert("Complete all fields!");
     }
 
     api
@@ -41,12 +41,12 @@ export function SignUp() {
     <Container>
       <Register>
         <h1>RocketMovies</h1>
-        <p>Aplicação para acompanhar tudo que assistir.</p>
+        <p>Application to follow everything you watch.</p>
 
-        <h2>Crie sua conta</h2>
+        <h2>Create you account</h2>
         <Input
           type='text'
-          placeholder='Nome'
+          placeholder='Name'
           icon={HiOutlineUser}
           onChange={(e) => setName(e.target.value)}
         />
@@ -58,13 +58,13 @@ export function SignUp() {
         />
         <Input
           type='password'
-          placeholder='Senha'
+          placeholder='Password'
           icon={HiOutlineLockClosed}
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <Button title='Cadastrar' onClick={handleSignUp} />
-        <ButtonText icon={HiArrowLeft} title='Voltar para o login' onClick={handleBack} />
+        <Button title='Register' onClick={handleSignUp} />
+        <ButtonText icon={HiArrowLeft} title='Go back to login' onClick={handleBack} />
       </Register>
       <Image />
     </Container>

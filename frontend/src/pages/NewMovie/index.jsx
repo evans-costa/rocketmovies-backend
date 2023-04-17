@@ -38,16 +38,16 @@ export function NewMovie() {
 
   async function handleNewNote() {
     if (newTag) {
-      return alert("Adicione a tag que está preenchida ou deixe o campo vazio.");
+      return alert("Add the tag you filled or leave the field empty.");
     }
 
     if (rating > 5 || rating < 0 || isNaN(rating)) {
-      return alert("Adicione notas apenas de 0 a 5!");
+      return alert("Only add a rate between 0 and 5!");
     }
 
     if (!title || !description || !rating) {
       const confirmSave = window.confirm(
-        "Tem certeza que deseja salvar o filme sem preencher os campos?"
+        "Are you sure save the movie without complete the fields?"
       );
 
       if (!confirmSave) {
@@ -62,7 +62,7 @@ export function NewMovie() {
       tags,
     });
 
-    alert("Filme cadastrado com sucesso!");
+    alert("Movie successfully saved!");
     navigate("/");
   }
 
@@ -70,20 +70,20 @@ export function NewMovie() {
     <Container>
       <Header />
       <Content>
-        <ButtonText icon={HiArrowLeft} title='Voltar' onClick={handleBack} />
+        <ButtonText icon={HiArrowLeft} title='Go back' onClick={handleBack} />
 
-        <Section className='new-movie' title='Novo filme'>
+        <Section className='new-movie' title='New Movie'>
           <div className='input-wrapper'>
-            <Input type='text' placeholder='Título' onChange={(e) => setTitle(e.target.value)} />
+            <Input type='text' placeholder='Title' onChange={(e) => setTitle(e.target.value)} />
             <Input
               type='text'
-              placeholder='Sua nota (de 0 a 5)'
+              placeholder='Your rate (from 0 to 5)'
               onChange={(e) => setRating(e.target.value)}
             />
           </div>
-          <TextArea placeholder='Observações' onChange={(e) => setDescription(e.target.value)} />
+          <TextArea placeholder='Comments' onChange={(e) => setDescription(e.target.value)} />
           <Bookmarks>
-            <h3>Marcadores</h3>
+            <h3>Tags</h3>
             <div className='tags'>
               {tags.map((tag, index) => (
                 <NewTag
@@ -96,7 +96,7 @@ export function NewMovie() {
               ))}
               <NewTag
                 isNew
-                placeholder='Novo marcador'
+                placeholder='New Tag'
                 value={newTag}
                 onChange={(e) => setNewTag(e.target.value)}
                 onClick={handleAddTag}
@@ -105,8 +105,8 @@ export function NewMovie() {
           </Bookmarks>
 
           <ButtonWrapper>
-            <Button isRemove title='Cancelar' />
-            <Button title='Salvar filme' onClick={handleNewNote} />
+            <Button isRemove title='Cancel' onClick={handleBack} />
+            <Button title='Save Movie' onClick={handleNewNote} />
           </ButtonWrapper>
         </Section>
       </Content>

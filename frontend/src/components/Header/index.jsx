@@ -26,7 +26,7 @@ export function Header({ search, setSearch }) {
     <Container>
       <h1>RocketMovies</h1>
       <Input
-        placeholder='Pesquisar pelo título'
+        placeholder='Search by title'
         type='search'
         value={search}
         onChange={(e) => setSearch(e.target.value)}
@@ -34,7 +34,7 @@ export function Header({ search, setSearch }) {
       <Profile>
         <div>
           <strong>{user.name}</strong>
-          <button onClick={handleSignOut}>sair</button>
+          <button onClick={handleSignOut}>Logout</button>
         </div>
         <Link to='/profile'>
           <img src={avatarUrl} alt={`${user.name} profile picture`} />

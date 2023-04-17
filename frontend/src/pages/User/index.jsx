@@ -62,12 +62,12 @@ export function User() {
   return (
     <Container>
       <header>
-        <ButtonText icon={HiArrowLeft} title='Voltar' onClick={handleBack} />
+        <ButtonText icon={HiArrowLeft} title='Go Back' onClick={handleBack} />
       </header>
 
       <Form>
         <Profile>
-          <img src={avatar} alt={`{Foto de perfil de ${user.name}`} />
+          <img src={avatar} alt={`{${user.name} profile picture`} />
           <label htmlFor='avatar'>
             <HiOutlineCamera />
             <input type='file' id='avatar' onChange={handleChangeAvatar} />
@@ -76,32 +76,32 @@ export function User() {
 
         <Input
           type='text'
-          placeholder='Nome'
+          placeholder='Name'
           icon={HiOutlineUser}
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <Input
           type='email'
-          placeholder='Email'
+          placeholder='E-mail'
           icon={HiOutlineMail}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <Input
           type='password'
-          placeholder='Senha atual'
+          placeholder='Current password'
           icon={HiOutlineLockClosed}
           onChange={(e) => setOldPasword(e.target.value)}
         />
         <Input
           type='password'
-          placeholder='Nova senha'
+          placeholder='New password'
           icon={HiOutlineLockClosed}
           onChange={(e) => setNewPassword(e.target.value)}
         />
 
-        <Button title='Salvar' onClick={handleUpdateProfile} />
+        <Button title='Save' onClick={handleUpdateProfile} />
       </Form>
     </Container>
   );

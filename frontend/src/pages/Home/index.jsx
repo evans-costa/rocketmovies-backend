@@ -35,10 +35,10 @@ export function Home() {
       <main>
         <Content>
           <div>
-            <h2>Meus filmes</h2>
+            <h2>My movies</h2>
             <NewNote to='/new'>
               <HiPlus size={22} />
-              Adicionar Filme
+              Add a Movie
             </NewNote>
           </div>
 
@@ -46,7 +46,7 @@ export function Home() {
             <div className='notes'>
               {notes.map((note) => (
                 <Note
-                  key={note.id}
+                  key={String(note.id)}
                   title={note.title}
                   description={note.description}
                   rating={note.rating}
